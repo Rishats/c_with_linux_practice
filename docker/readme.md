@@ -7,7 +7,7 @@ This project demonstrates how a containerized application can handle signals lik
 In Docker, PID 1 is the first process started inside a container. Typically, sending signals to processes like `SIGTERM`, `SIGKILL`, or `SIGQUIT` can terminate or restart processes. However, the behavior is different for PID 1 inside a container:
 
 - The only signals that can be sent to PID 1 are those for which explicit signal handlers have been installed.
-- **SIGKILL** cannot be caught or ignored, and it must be handled by the system or container orchestrator (like Docker or Tsuru).
+- **SIGKILL** cannot be caught or ignored, and it must be handled by the system or container orchestrator.
 - If no handler is set for signals like `SIGTERM`, the process may not respond, leaving the container stuck.
 
 This project demonstrates:
